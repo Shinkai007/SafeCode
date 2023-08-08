@@ -1,0 +1,22 @@
+{
+  "name": "unsafecode",
+  "version": "1.0.0",
+  "description": "unsafecode test",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "lint": "eslint './*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "null"
+  ],
+  "author": "Shinkai",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint-plugin-security": "^1.7.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "eslint-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example-eslint-integration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.46.0",
+    "eslint-plugin-security": "^1.7.1"
+  }
+}
