@@ -1,0 +1,15 @@
+{
+    "name": "eslint-plugin-custom-rules",
+    "version": "1.0.0",
+    "description": "Custom ESLint rules for the safecode project",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+      "eslint": "^7.0.0"
+    }
+  }
+  
