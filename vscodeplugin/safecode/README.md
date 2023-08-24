@@ -1,65 +1,65 @@
-# safecode README
+# SafeCode Extension README
 
-This is the README for your extension "safecode". After writing up a brief description, we recommend including the following sections.
+SafeCode is a security-focused extension for Visual Studio Code, designed to assist developers in identifying and rectifying potential security vulnerabilities in their codebase. By integrating SafeCode into your development workflow, you can ensure your code is more secure, resilient, and free from common security threats.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- To use the SafeCode extension, first get your API key. Then, in VSCode, open Settings (File > Preferences > Settings), search for safecode, and enter your API key in the safecode.apiKey field.
+- **Real-time Security Analysis**: As you code, SafeCode performs real-time analysis to detect potential security vulnerabilities.
+- **Detailed Reports**: Upon detecting a vulnerability, SafeCode provides a detailed report explaining the issue and suggesting possible fixes.
+- **Integration with ChatGPT**: For complex issues, SafeCode can consult ChatGPT to provide in-depth explanations and code modification suggestions.
+- **Customizable**: SafeCode allows users to customize the types of security checks based on their project needs.
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![SafeCode in action](images/safecode-action.png)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code v1.60 or higher.
+- An active internet connection for ChatGPT integration.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+SafeCode offers several settings to customize its behavior:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- `safecode.enable`: Enables or disables the SafeCode extension.
+- `safecode.securityLevel`: Adjusts the level of security checks (e.g., `low`, `medium`, `high`).
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Some false positives might occur for highly obfuscated code.
+- Real-time analysis might slow down the editor for very large files.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+- Initial release of SafeCode.
+- Real-time security analysis feature added.
+- Integration with ChatGPT for advanced security advice.
 
 ### 1.0.1
 
-Fixed issue #.
+- Fixed minor bugs related to real-time analysis.
+- Improved integration with ChatGPT.
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+- Added support for customizable security checks.
+- Enhanced performance for large files.
 
 ---
 
 ## Working with Markdown
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+If you're new to writing markdown, here are some quick tips:
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+- Use `#` for headers. More `#` symbols mean a smaller header.
+- To create a bullet list, start lines with `-` or `*`.
+- Wrap text with `*` or `_` for italics, and `**` or `__` for bold.
 
-## For more information
+For more markdown tips:
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Stay Secure with SafeCode!**

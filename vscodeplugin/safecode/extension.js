@@ -5,6 +5,9 @@ const axios = require("axios");
 
 let diagnostics;
 function activate(context) {
+  if (!checkAPIKey()) {
+    return;
+  }
   console.log('Congratulations, your extension "safecode" is now active!');
 
   // 创建一个诊断集合
@@ -52,7 +55,7 @@ function activate(context) {
       console.log("errorWithCodeText", errorWithCodeText[1]);
       let chatGPTResponse;
       //  temp
-      errorWithCodeText = errorWithCodeText[1]
+      errorWithCodeText = errorWithCodeText[1];
 
       if (errorWithCodeText) {
         console.log("11111", errorWithCodeText);
@@ -63,7 +66,7 @@ function activate(context) {
           codeText = match[1];
         }
 
-        console.log("codeText",codeText); 
+        console.log("codeText", codeText);
 
         chatGPTResponse = await getChatGPTResponse(codeText);
         vscode.window.showInformationMessage(chatGPTResponse);
@@ -80,10 +83,33 @@ function activate(context) {
     }
   });
 }
+// 用户更改设置重新激活
+vscode.workspace.onDidChangeConfiguration(event => {
+  if (event.affectsConfiguration('safecode.apiKey')) {
+      // The user changed the API key. You can re-check it here.
+      checkAPIKey();
+  }
+});
 
 function deactivate() {
   // 当插件被停用时，清除所有诊断信息
   diagnostics.clear();
+}
+// 检查apikey
+function checkAPIKey() {
+  const config = vscode.workspace.getConfiguration("safecode");
+  const apiKey = config.get("apiKey");
+
+  if (!apiKey) {
+    vscode.window.showWarningMessage(
+      "请先在VSCode设置中为SafeCode扩展设置您的API键。"
+    );
+    return false;
+  }
+  vscode.window.showWarningMessage(
+    "您已经成功设置SafeCodeAPI键"
+  );
+  return true;
 }
 
 async function getChatGPTResponse(code) {
@@ -106,9 +132,12 @@ async function getChatGPTResponse(code) {
     frequency_penalty: 0,
     presence_penalty: 0,
   };
-
+  const config = vscode.workspace.getConfiguration("safecode");
+  const apiKey = config.get("apiKey");
+  console.log("apiKey", apiKey==='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')
+  
   const headers = {
-    Authorization: `Bearer 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`,
+    Authorization: `Bearer ${apiKey}`,
     "Content-Type": "application/json",
   };
 
