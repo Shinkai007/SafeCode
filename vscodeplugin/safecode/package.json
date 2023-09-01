@@ -6,6 +6,11 @@
   "engines": {
     "vscode": "^1.81.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shinkai007/SafeCode"
+  },
+  "publisher": "Shinkai005",
   "categories": [
     "Other"
   ],

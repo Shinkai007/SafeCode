@@ -55,7 +55,7 @@ function activate(context) {
       console.log("errorWithCodeText", errorWithCodeText[1]);
       let chatGPTResponse;
       //  temp
-      errorWithCodeText = errorWithCodeText[1];
+      errorWithCodeText = errorWithCodeText[0];
 
       if (errorWithCodeText) {
         console.log("11111", errorWithCodeText);
@@ -64,6 +64,7 @@ function activate(context) {
         let codeText = "";
         if (match && match[1]) {
           codeText = match[1];
+
         }
 
         console.log("codeText", codeText);
@@ -102,12 +103,12 @@ function checkAPIKey() {
 
   if (!apiKey) {
     vscode.window.showWarningMessage(
-      "请先在VSCode设置中为SafeCode扩展设置您的API键。"
+      "Please set your API key for the SafeCode extension in the VSCode settings first."
     );
     return false;
   }
   vscode.window.showWarningMessage(
-    "您已经成功设置SafeCodeAPI键"
+    "You have successfully set up the SafeCodeAPI key!"
   );
   return true;
 }
@@ -134,7 +135,6 @@ async function getChatGPTResponse(code) {
   };
   const config = vscode.workspace.getConfiguration("safecode");
   const apiKey = config.get("apiKey");
-  console.log("apiKey", apiKey==='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')
   
   const headers = {
     Authorization: `Bearer ${apiKey}`,
